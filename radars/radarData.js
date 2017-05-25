@@ -1,15 +1,15 @@
 //This is the title for your window tab, and your Radar
-document.title = "WotifGroup's Technology Radar (December 2014)";
+document.title = "Twofour's Technology Radar (Juni 2017)";
 
 
 //This is the concentic circles that want on your radar
 var radar_arcs = [
-                   {'r':100,'name':'Adopt'}
-                  ,{'r':200,'name':'Trial'}
-                  ,{'r':300,'name':'Assess'}
-                  ,{'r':400,'name':'Hold'}
-                 // ,{'r':500,'name':'Possible Extra if you want it'}
-                 ];
+  {'r':100,'name':'Produktiv im Einsatz (hat sich bewährt)'},
+  {'r':200,'name':'Sehr Interasannt (einsatzbereit!)'},
+  {'r':300,'name':'Interessant (bald einsatzbereit)'},
+  {'r':400,'name':'Zukunft'},
+  // ,{'r':500,'name':'Possible Extra if you want it'}
+];
 
 //This is your raw data
 //
