@@ -1,173 +1,229 @@
-function init(h,w) {
-  $('#title').text(document.title);  
-	   
- var radar = new pv.Panel()
-      .width(w)
-      .height(h)
-      .canvas('radar')
-
-// arcs
-radar.add(pv.Dot)
-       .data(radar_arcs)
-       .left(w/2)
-       .bottom(h/2)
-       .radius(function(d){return d.r;})
-       .strokeStyle("#ccc")
-       .anchor("top")       
-       .add(pv.Label).text(function(d) { return d.name;});
-
-//quadrant lines -- vertical
-radar.add(pv.Line)
-        .data([(h/2-radar_arcs[radar_arcs.length-1].r),h-(h/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
-        .left(w/2)        
-        .bottom(function(d) {return d;})       
-        .strokeStyle("#bbb");
-
-//quadrant lines -- horizontal 
-radar.add(pv.Line)
-        .data([(w/2-radar_arcs[radar_arcs.length-1].r),w-(w/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
-        .bottom(h/2)
-        .left(function(d) {return d;})       
-        .strokeStyle("#bbb");
-
-
-// blips
-// var total_index=1;
-// for (var i = 0; i < radar_data.length; i++) {
-//     radar.add(pv.Dot)       
-//     .def("active", false)
-//     .data(radar_data[i].items)
-//     .size( function(d) { return ( d.blipSize !== undefined ? d.blipSize : 70 ); })
-//     .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
-//                         //console.log("name:" + d.name + ", x:" + x); 
-//                         return x;})
-//     .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
-//                           //console.log("name:" + d.name + ", y:" + y); 
-//                           return y;})
-//     .title(function(d) { return d.name;})		 
-//     .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
-//     .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
-//     .angle(Math.PI)  // 180 degrees in radians !
-//     .strokeStyle(radar_data[i].color)
-//     .fillStyle(radar_data[i].color)
-//     .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})         
-//     .anchor("center")
-//         .add(pv.Label)
-//         .text(function(d) {return total_index++;}) 
-//         .textBaseline("middle")
-//         .textStyle("white");            
-// }
-
-
-//Quadrant Ledgends
-var radar_quadrant_ctr=1;
-var quadrantFontSize = 18;
-var headingFontSize = 14;
-var stageHeadingCount = 0;
-var lastRadius = 0;
-var lastQuadrant='';
-var spacer = 6;
-var fontSize = 10;
-var total_index = 1;
-
-//TODO: Super fragile: re-order the items, by radius, in order to logically group by the rings.
-for (var i = 0; i < radar_data.length; i++) {
-    //adjust top by the number of headings.
-    if (lastQuadrant != radar_data[i].quadrant) {
-        radar.add(pv.Label)         
-            .left( radar_data[i].left )         
-            .top( radar_data[i].top )  
-            .text(  radar_data[i].quadrant )		 
-            .strokeStyle( radar_data[i].color )
-            .fillStyle( radar_data[i].color )                    
-            .font(quadrantFontSize + "px sans-serif");
-         
-        lastQuadrant = radar_data[i].quadrant;
-
-    }
-
-    // group items by stage based on how far they are from each arc
-    var itemsByStage = _.groupBy(radar_data[i].items, function(item) {
-      for(var arc_i = 0; arc_i < radar_arcs.length; arc_i++) {
-        if (item.pc.r < radar_arcs[arc_i].r)
-        {
-          return arc_i;
-        }
-      }
-      return 0;
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.radar').forEach(function (element) {
+        var radar = new Radar();
+        radar.init(element);
+        radar.render();
     });
-    
-    // In the case where a quadrant doesn't have an item, group_by will return undefined
-    // To avoid this, fill in the blanks with an empty array
-    for (var j=0;j<radar_arcs.length;++j) {
-        if (!itemsByStage[j]) itemsByStage[j] = [];
-    }
+}, false);
 
-    
-    var offsetIndex = 0;
-    for (var stageIdx in _(itemsByStage).keys()) {
 
-        if (stageIdx > 0) {
-            offsetIndex = offsetIndex + itemsByStage[stageIdx-1].length + 1; 
-            console.log("offsetIndex = " + itemsByStage[stageIdx-1].length, offsetIndex );
+function Radar() {
+
+    this.size = window.innerWidth / 2;
+    this.padding = 50;
+    this.draw = undefined;
+    this.element = undefined;
+
+    this.data = [];
+
+    this.init = function (element) {
+
+        this.element = element;
+        this.draw = SVG(element).size(this.size, this.size);
+        this.size -= this.padding;
+
+        this.url = element.getAttribute('data-src');
+        this.data = this.getJSON();
+
+        document.title = this.data.name;
+
+        this.drawBackground();
+        this.drawActions();
+    };
+
+    this.drawBackground = function () {
+        var space = (this.size / 4);
+
+        for (var i = 1; i < 5; i++) {
+            var size = i * (space) - this.padding;
+            this.draw.circle(size).move((this.size / 2) - (size / 2), (this.size / 2) - (size / 2)).fill('transparent').stroke('#585858');
+            this.draw.text("Zone " + i).move((this.size / 2), (this.size / 2) + (size / 2)).font({ size: 12 });
         }
 
-        radar.add(pv.Label)         
-            .left( radar_data[i].left + headingFontSize )
-            .top( radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize) )
-            .text( radar_arcs[stageIdx].name)
-            .strokeStyle( '#cccccc' )
-            .fillStyle( '#cccccc')                    
-            .font(headingFontSize + "px Courier New");
+        var halfSize = (this.size / 2);
+        this.draw.line(0, halfSize, this.size, halfSize).stroke({width: 1})
+        this.draw.line(halfSize, 0, halfSize, this.size).stroke({width: 1})
+    };
 
-    radar.add(pv.Label)             
-        .left( radar_data[i].left )         
-        .top( radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize) )
-        .strokeStyle( radar_data[i].color )
-        .fillStyle( radar_data[i].color )                    
-        .add( pv.Dot )            
-            .def("i", radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + spacer  + (offsetIndex * fontSize) )
-            .data(itemsByStage[stageIdx])            
-            .top( function() { return ( this.i() + (this.index * fontSize) );} )   
-            .shape( function(d) {return (d.movement === 't' ? "triangle" : "circle");})                 
-            .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
-            .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
-            .size(fontSize) 
-            .angle(45)            
-            .anchor("right")                
-                .add(pv.Label)                
-                .text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
+    this.drawActions = function () {
+        var quadrants = this.data.quadrants;
+        for (var i in quadrants) {
 
-    radar.add(pv.Dot)       
-      .def("active", false)
-      .data(itemsByStage[stageIdx])
-      .size( function(d) { return ( d.blipSize !== undefined ? d.blipSize : 70 ); })
-      .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
-                          //console.log("name:" + d.name + ", x:" + x); 
-                          return x;})
-      .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
-                            //console.log("name:" + d.name + ", y:" + y); 
-                            return y;})
-      .title(function(d) { return d.name;})		 
-      .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
-      .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
-      .angle(Math.PI)  // 180 degrees in radians !
-      .strokeStyle(radar_data[i].color)
-      .fillStyle(radar_data[i].color)
-      .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})         
-      .anchor("center")
-          .add(pv.Label)
-          .text(function(d) {return total_index++;}) 
-          .textBaseline("middle")
-          .textStyle("white");            
+            var quadrant = quadrants[i];
 
+            var button = document.createElement("BUTTON");
+            button.appendChild(document.createTextNode("+ " + quadrant.name));
+            button.setAttribute('data-index', quadrant.index);
+            button.style.background = quadrant.color;
+            button.style.position = 'absolute';
+            button.style.left = quadrant.left;
+            button.style.right = quadrant.right;
+            button.style.top = quadrant.top;
+            button.style.bottom = quadrant.bottom;
 
+            button.onclick = function (event) {
+                var name = prompt('Bitte Namen eingeben');
+                if (!name) {
+                    return;
+                }
+
+                var index = Number(event.target.getAttribute('data-index')) - 1,
+                    quadrant = this.data.quadrants[index];
+
+                var newItem = { name: name, pc: { r: 0, t: 0 }, movement: "c", color: quadrant.color};
+                quadrant.items.push(newItem);
+                newItem.index = quadrant.index + '.' + (quadrant.items.length);
+
+                this.drawItem(newItem);
+
+            }.bind(this);
+
+            this.element.append(button);
+        }
+    };
+
+    // { name: "Pair Programming", pc: { r: 130, t: 170 }, movement: "c"}
+    this.drawItem = function (item) {
+
+        var group = this.draw.group().draggable();
+        /*
+        group.draggable(function(x, y) {
+
+        var coords = {x: true, y: true};
+        var itemSize = 24,
+            offset = (this.size / 2) - (itemSize / 2);
+
+        if (x + offset < this.padding) {
+            coords.x = this.padding - offset;
+        }
+        else if (x + offset > this.size - this.padding) {
+            coords.x = this.size - this.padding - offset;
+        }
+
+        if (y + offset < this.padding) {
+            coords.y = this.padding - offset;
+        }
+        else if (y + offset > this.size - this.padding) {
+            coords.y = this.size - this.padding - offset;
+        }
+
+        return coords;
+
+        }.bind(this));
+        */
+
+        var itemSize = 24;
+        var point = this.polarToCartesian(item.pc.r, item.pc.t);
+        group.data('item-point', point);
+
+        var offset = (this.size / 2) - (itemSize / 2);
+        var x = point.x + offset,
+            y = point.y + offset;
+
+        group.circle(itemSize, itemSize).move(x, y).attr({fill: item.color});
+        group.text(item.name).move(x + 3, y + (itemSize / 4)).font({ size: 12 });
+        group.node.style.cursor = "pointer";
+
+        group.data('item-index', item.index);
+
+        group.off('dragend').on('dragend', function(event){
+
+            // event.detail.event hold the given data explained below
+
+            var matrix = event.target.getAttribute('transform');
+            if (matrix) {
+                var group = event.detail.handler.el;
+
+                matrix = matrix.split('(')[1].split(')')[0].split(',');
+
+                var point = group.data('item-point');
+                point.x = Number(point.x) + Number(matrix[4]);
+                point.y = Number(point.y) + Number(matrix[5]);
+                var pc = this.cartesianToPolar(point.x, point.y);
+
+                var itemIndex = group.data('item-index').toString().split('.');
+                var item = this.data.quadrants[itemIndex[0] - 1].items[itemIndex[1] - 1];
+
+                item.pc = pc;
+
+                this.sendJSON();
+            }
+        }, this);
+
+        group.off('contextmenu').on('contextmenu', function(event) {
+            event.preventDefault();
+
+            if (confirm("Soll das Element \""+ event.currentTarget.textContent +"\" endgültig gelöscht werden?")) {
+                var itemIndex = event.currentTarget.getAttribute('data-item-index').split('.');
+                this.data.quadrants[itemIndex[0] - 1].items.splice(itemIndex[1] - 1, 1);
+                event.currentTarget.remove();
+
+                this.sendJSON();
+            }
+
+            return false;
+        }.bind(this));
+    };
+
+    this.render = function () {
+        var quadrants = this.data.quadrants;
+        for (var i in quadrants) {
+
+            var quadrant = quadrants[i];
+            quadrant.index = Number(i) + 1;
+
+            // Todo: Legende zeichnen
+
+            quadrant.items = Object.values(quadrant.items);
+            quadrant.items.forEach(function (item, index) {
+                if (item) {
+                    item.index = quadrant.index + '.' + (index + 1);
+                    item.color = quadrant.color;
+                    this.drawItem(item);
+                }
+            }, this);
+
+        }
+    };
+
+    this.polarToCartesian = function (r, t) {
+        var a = t * Math.PI / 180;
+
+        return {
+            x: r * Math.cos(a),
+            y: r * Math.sin(a)
+        };
+    };
+
+    this.cartesianToPolar = function (x, y) {
+        return {
+            r: Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)),
+            t: Math.atan2(x, y) * -(180 / Math.PI) + 90
+        };
+    };
+
+    this.getJSON = function() {
+
+        var request = new XMLHttpRequest();
+        request.open('GET', this.url, false);  // `false` makes the request synchronous
+        request.send(null);
+
+        if (request.status === 200) {
+            return JSON.parse(request.responseText);
+        }
+
+        return false;
+    };
+
+    this.sendJSON = function () {
+        var request = new XMLHttpRequest();
+        request.open('POST', this.url, false);  // `false` makes the request synchronous
+        request.send(JSON.stringify(this.data));
+
+        if (request.status === 200) {
+            return JSON.parse(request.responseText);
+        }
+
+        return false;
     }
-}      
-       
- radar.anchor('radar');
- radar.render();
-     
-  };
+}

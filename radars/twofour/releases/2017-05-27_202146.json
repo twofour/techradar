@@ -1,0 +1,211 @@
+{
+    "name": "Twofour\u00b4s Technology Radar (Juni 2017)s",
+    "arcs": {
+        "0": {
+            "r": 100,
+            "name": "Produktiv"
+        },
+        "1": {
+            "r": 200,
+            "name": "Beta"
+        },
+        "2": {
+            "r": 300,
+            "name": "Alpha"
+        },
+        "3": {
+            "r": 400,
+            "name": "Zukunft"
+        }
+    },
+    "quadrants": {
+        "0": {
+            "name": "Techniques",
+            "left": 0,
+            "top": 0,
+            "color": "#8FA227",
+            "items": {
+                "0": {
+                    "name": "Pair Programming",
+                    "pc": {
+                        "r": 112.40401617305,
+                        "t": 239.65040265416
+                    },
+                    "movement": "c",
+                    "index": "1.1",
+                    "color": "#8FA227"
+                },
+                "1": {
+                    "name": "Build Pipelines",
+                    "pc": {
+                        "r": 48.088449528224,
+                        "t": 226.24524739903
+                    },
+                    "movement": "c",
+                    "index": "1.2",
+                    "color": "#8FA227"
+                },
+                "2": {
+                    "name": "Clean Code",
+                    "pc": {
+                        "r": 162.69401255787,
+                        "t": 188.27537554259
+                    },
+                    "movement": "c",
+                    "index": "1.3",
+                    "color": "#8FA227"
+                },
+                "3": {
+                    "name": "Code Reviews",
+                    "pc": {
+                        "r": 125.67205783478,
+                        "t": 208.32805362162
+                    },
+                    "movement": "c",
+                    "index": "1.4",
+                    "color": "#8FA227"
+                }
+            },
+            "index": 1
+        },
+        "1": {
+            "name": "Tools",
+            "right": 0,
+            "top": 0,
+            "color": "#587486",
+            "items": {
+                "0": {
+                    "name": "Git",
+                    "pc": {
+                        "r": 37.574942901669,
+                        "t": -42.346301595113
+                    },
+                    "movement": "c",
+                    "index": "2.1",
+                    "color": "#587486"
+                },
+                "1": {
+                    "name": "Graph database ^",
+                    "pc": {
+                        "r": 159.28635543956,
+                        "t": -71.79225262135
+                    },
+                    "movement": "c",
+                    "index": "2.2",
+                    "color": "#587486"
+                },
+                "2": {
+                    "name": "mongoDB",
+                    "pc": {
+                        "r": 129.6259513958,
+                        "t": -15.774285880684
+                    },
+                    "movement": "c",
+                    "index": "2.3",
+                    "color": "#587486"
+                }
+            },
+            "index": 2
+        },
+        "2": {
+            "name": "Platforms",
+            "left": 0,
+            "top": 550,
+            "color": "#DC6F1D",
+            "items": {
+                "0": {
+                    "name": "Linux",
+                    "pc": {
+                        "r": 23.665877037996,
+                        "t": 136.58764629133
+                    },
+                    "movement": "c",
+                    "index": "3.1",
+                    "color": "#DC6F1D"
+                },
+                "1": {
+                    "name": "Azure",
+                    "pc": {
+                        "r": 179.64907638593,
+                        "t": 126.66514620033
+                    },
+                    "movement": "c",
+                    "index": "3.2",
+                    "color": "#DC6F1D"
+                },
+                "2": {
+                    "name": "AWS",
+                    "pc": {
+                        "r": 180.82758925457,
+                        "t": 152.64446103772
+                    },
+                    "movement": "c",
+                    "index": "3.3",
+                    "color": "#DC6F1D"
+                },
+                "3": {
+                    "name": "Docker",
+                    "pc": {
+                        "r": 69.296464556281,
+                        "t": 135
+                    },
+                    "movement": "c",
+                    "color": "#DC6F1D",
+                    "index": "3.4"
+                }
+            },
+            "index": 3
+        },
+        "3": {
+            "name": "Languages & Frameworks",
+            "color": "#B70062",
+            "right": 0,
+            "top": 550,
+            "items": {
+                "0": {
+                    "name": "NodeJs",
+                    "pc": {
+                        "r": 163.33246176655,
+                        "t": 22.246799496043
+                    },
+                    "movement": "c",
+                    "index": "4.1",
+                    "color": "#B70062"
+                },
+                "1": {
+                    "name": "TypeScript",
+                    "pc": {
+                        "r": 185.07550068109,
+                        "t": 79.37125325586
+                    },
+                    "movement": "c",
+                    "index": "4.2",
+                    "color": "#B70062"
+                },
+                "2": {
+                    "name": "Mustache\/Handlebars",
+                    "pc": {
+                        "r": 152.79068281265,
+                        "t": 54.154910139925
+                    },
+                    "movement": "c",
+                    "domain": "template",
+                    "index": "4.3",
+                    "color": "#B70062"
+                },
+                "3": {
+                    "name": "ECMAScript",
+                    "pc": {
+                        "r": 390,
+                        "t": 350
+                    },
+                    "movement": "c",
+                    "url": "https:\/\/www.google.com\/?q=ecmascript+6",
+                    "index": "4.4",
+                    "color": "#B70062"
+                }
+            },
+            "index": 4
+        }
+    }
+}

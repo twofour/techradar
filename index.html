@@ -1,34 +1,46 @@
 <html>
 <head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">  
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-<script src="https://code.jquery.com/jquery-1.10.1.min.js" integrity="sha256-SDf34fFWX/ZnUozXXEH0AeB+Ip3hvRsjLwp6QNTEb3k=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="lib/protovis-3.2/protovis-d3.2.js"></script>
-<script type="text/javascript" charset="utf-8" src="utils.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/lodash.underscore.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="radars/radarData.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.1.min.js" integrity="sha256-SDf34fFWX/ZnUozXXEH0AeB+Ip3hvRsjLwp6QNTEb3k=" crossorigin="anonymous"></script>
 
-<style type="text/css" media="screen">
-  
-#fig {
-  height: 1000px;
-  width: 1200px;
-}
+	<script src="bower_components/svg.js/dist/svg.min.js"></script>
+	<script src="bower_components/svg.draggable.js/dist/svg.draggable.min.js"></script>
 
-</style>
-  
-<script type="text/javascript" src="radar.js" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
+	<style type="text/css" media="screen">
 
-</script>
+		.radar {
+			position: relative;
+			width: 1200px;
+			height: 600px;
+		}
+
+		.radar > svg {
+			position: absolute;
+			left: 25%;
+		}
+
+		button {
+			border: none;
+		}
+
+	</style>
+
+	<script type="text/javascript" src="radar.js" charset="utf-8"></script>
 
 </head>
 
-<body onload="init(h,w);">
+<body>
+
 <h1 id="title" style="text-align: center;"></h1>
-<div id="radar"></div>
-<div>
-<p>^ Item in dispute, additional discussion and context to be provided.</p>
-</div>
+<div class="radar" data-src="api.php/twofour"></div>
+
+<ul>
+	<li><b>Zone 1</b>: Hat such etabliert</li>
+	<li><b>Zone 2</b>: Schon im Einsatz, sollte weiter vorran getrieben werden</li>
+	<li><b>Zone 3</b>: Interessant und ist einsatzbereit</li>
+	<li><b>Zone 4</b>: Interessant und bald einsatzbereit</li>
+</ul>
+
 </body>
 </html>

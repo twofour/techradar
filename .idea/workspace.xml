@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="daef5584-70ba-4b50-a7cb-c030df688634" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jasmine-1.0.1/jasmine-html.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jasmine-1.0.1/jasmine.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jasmine-1.0.1/jasmine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lodash.underscore.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/MIT.LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/antibiotics/antibiotics-scatter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/antibiotics/antibiotics.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/antibiotics/antibiotics.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/barley/barley.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/barley/barley.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/cars/cars.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/cars/cars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/crimea/crimea-grouped-bar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/crimea/crimea-line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/crimea/crimea-stacked-area.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/crimea/crimea-stacked-bar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/crimea/crimea.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/examples/crimea/crimea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/files.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/Array.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/_global_.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Anchor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Area.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Bar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Behavior.drag.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Behavior.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Behavior.pan.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Behavior.point.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Behavior.resize.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Behavior.select.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Behavior.zoom.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Color.Hsl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Color.Rgb.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Color.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Colors.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Constraint.bound.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Constraint.collision.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Constraint.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Constraint.position.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Dom.Node.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Dom.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Dot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Flatten.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Force.charge.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Force.drag.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Force.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Force.spring.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Format.date.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Format.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Format.number.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Format.time.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Geo.LatLng.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Geo.Projection.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Geo.projections.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Geo.scale#ticks.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Geo.scale.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Image.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Label.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Arc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Bullet.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Cluster.Fill.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Cluster.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Force.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Hierarchy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Horizon.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Indent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Matrix.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Network.Link.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Network.Node.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Network.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Pack.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Partition.Fill.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Partition.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Rollup.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Stack.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.Treemap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Layout.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Mark.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Nest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Panel.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Particle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Quadtree.Node.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Quadtree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Rule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Scale.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Scale.linear.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Scale.log.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Scale.ordinal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Scale.quantile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Scale.quantitative.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Scale.root.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Simulation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Transform.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Vector.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.Wedge.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.histogram.Bin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.histogram.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/pv.version.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_behavior_Behavior.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_behavior_Drag.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_behavior_Pan.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_behavior_Point.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_behavior_Resize.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_behavior_Select.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_behavior_Zoom.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_color_Color.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_color_Colors.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_color_Ramp.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Arrays.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Dom.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Flatten.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Histogram.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_LinearScale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_LogScale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Nest.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Numbers.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Objects.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_OrdinalScale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_QuantileScale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_QuantitativeScale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_RootScale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Scale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Transform.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Tree.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_data_Vector.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_geo_Geo.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_geo_GeoScale.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_geo_LatLng.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_geo_Projection.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_geo_Projections.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_lang_Array.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_lang_init.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Arc.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Bullet.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Cluster.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Force.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Grid.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Hierarchy.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Horizon.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Indent.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Layout.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Matrix.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Network.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Pack.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Partition.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Rollup.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Stack.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Tree.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_layout_Treemap.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Anchor.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Area.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Bar.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Dot.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Image.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Label.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Line.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Mark.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Panel.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Rule.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_mark_Wedge.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_BoundConstraint.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_ChargeForce.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_CollisionConstraint.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_Constraint.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_DragForce.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_Force.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_Particle.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_PositionConstraint.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_Quadtree.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_Simulation.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_physics_SpringForce.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_pv-internals.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_pv.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgArea.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgBar.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgCurve.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgDot.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgImage.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgLabel.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgLine.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgPanel.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgRule.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgScene.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_scene_SvgWedge.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_text_DateFormat.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_text_Format.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_text_NumberFormat.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/jsdoc/symbols/src/src_text_TimeFormat.js.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/protovis-d3.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/protovis-3.2/protovis-r3.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/radars/radarData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/radars/thoughtworks_tech_radar_aug_2010.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/utils_test.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/radar.js" afterPath="$PROJECT_DIR$/radar.js" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="41" column="60" lean-forward="false" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="radar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/radar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="39" column="90" lean-forward="false" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
+              <folding>
+                <element signature="e#2901#3575#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="current.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/radars/twofour/current.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="149" column="32" lean-forward="true" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+              <folding>
+                <marker date="1495909412000" expanded="true" signature="5370:5392" ph="{&quot;r&quot;: 185.07550068109...}" />
+                <marker date="1495909412000" expanded="true" signature="5370:5523" ph="{&quot;name&quot;: &quot;TypeScript&quot;...}" />
+                <marker date="1495909412000" expanded="true" signature="5370:6313" ph="{...}" />
+                <marker date="1495909412000" expanded="true" signature="5370:6347" ph="{&quot;name&quot;: &quot;Languages &amp; Frameworks&quot;...}" />
+                <marker date="1495909412000" expanded="true" signature="5546:5913" ph="{&quot;name&quot;: &quot;Mustache\/Handlebars&quot;...}" />
+                <marker date="1495909412000" expanded="true" signature="5626:5740" ph="{&quot;r&quot;: 152.79068281265...}" />
+                <marker date="1495909412000" expanded="true" signature="5936:6299" ph="{&quot;name&quot;: &quot;ECMAScript&quot;...}" />
+                <marker date="1495909412000" expanded="true" signature="6006:6096" ph="{&quot;r&quot;: 390...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>thoughtworks_tech_radar_aug_2010</find>
+      <find>d</find>
+      <find>radarData</find>
+      <find>radarata</find>
+      <find>radar_ata</find>
+      <find>radar_Data</find>
+      <find>(\w+) :</find>
+      <find>&quot;(\w+)&quot;:</find>
+      <find>\{(\w+)</find>
+      <find>(\w+)\}</find>
+      <find>function left</find>
+      <find>left</find>
+      <find>polar_to_raster</find>
+      <find>polar_to_raster(</find>
+      <find>quadrant:</find>
+      <find>getJSON</find>
+      <find>json_encode</find>
+      <find>items</find>
+      <find>drawItem</find>
+      <find>quadrant.items.forEach(function (item, index</find>
+      <find>pc:</find>
+      <find>'</find>
+      <find>(\w+):</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>$1:</replace>
+      <replace>{ $1</replace>
+      <replace>$1 }</replace>
+      <replace>&quot;</replace>
+      <replace>&quot;$1&quot;:</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dragDrop.js" />
+        <option value="$PROJECT_DIR$/radars/radarData.js" />
+        <option value="$PROJECT_DIR$/radars/radarData.json" />
+        <option value="$PROJECT_DIR$/gotest" />
+        <option value="$PROJECT_DIR$/test.go" />
+        <option value="$PROJECT_DIR$/radars/twofour.json" />
+        <option value="$PROJECT_DIR$/radars/twofour/releases/2017-05-26_165557.json" />
+        <option value="$PROJECT_DIR$/radars/twofour/releases/2017-05-26_180947.json" />
+        <option value="$PROJECT_DIR$/radars/twofour/releases/2017-05-26_180851.json" />
+        <option value="$PROJECT_DIR$/api.php" />
+        <option value="$PROJECT_DIR$/bower_components/svg.draggable.js/dist/svg.draggable.js" />
+        <option value="$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195747.json" />
+        <option value="$PROJECT_DIR$/radars/twofour/current.json" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/radar.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Blade files</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code StylePHP</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Ini Files</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>RegExp</id>
+          </State>
+          <State>
+            <id>UndefinedPHP</id>
+          </State>
+          <State>
+            <id>UnusedPHP</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="radars" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twofour" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="radars" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twofour" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="releases" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svg.draggable.js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techradar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svg.draggable.js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="preferences.sourceCode.PHP" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="settings.editor.splitter.proportion" value="0.23788151" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="FullScreen" value="true" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/bk/Documents/projects/techradar/utils.js" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/radars/twofour" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="daef5584-70ba-4b50-a7cb-c030df688634" name="Default" comment="" />
+      <created>1495727116560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1495727116560</updated>
+      <workItem from="1495727118470" duration="3057000" />
+      <workItem from="1495734834926" duration="40682000" />
+      <workItem from="1495906700888" duration="2647000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="46386000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140575" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/radars/twofour/current.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <marker date="1495909412000" expanded="true" signature="5370:5392" ph="{&quot;r&quot;: 185.07550068109...}" />
+            <marker date="1495909412000" expanded="true" signature="5370:5523" ph="{&quot;name&quot;: &quot;TypeScript&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="5370:6313" ph="{...}" />
+            <marker date="1495909412000" expanded="true" signature="5370:6347" ph="{&quot;name&quot;: &quot;Languages &amp; Frameworks&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="5546:5913" ph="{&quot;name&quot;: &quot;Mustache\/Handlebars&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="5626:5740" ph="{&quot;r&quot;: 152.79068281265...}" />
+            <marker date="1495909412000" expanded="true" signature="5936:6299" ph="{&quot;name&quot;: &quot;ECMAScript&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="6006:6096" ph="{&quot;r&quot;: 390...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="27" lean-forward="true" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding>
+            <element signature="e#2901#3575#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/radarData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding>
+            <element signature="e#2901#3575#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/protovis-3.2/protovis-d3.2.js" />
+    <entry file="file://$PROJECT_DIR$/dragDrop.js" />
+    <entry file="file://$PROJECT_DIR$/radars/thoughtworks_tech_radar_aug_2010.js" />
+    <entry file="file://$PROJECT_DIR$/lib/lodash.underscore.min.js" />
+    <entry file="file://$PROJECT_DIR$/lib/protovis-3.2/protovis-r3.2.js" />
+    <entry file="file://$PROJECT_DIR$/lib/protovis-3.2/protovis-d3.2.js" />
+    <entry file="file://$PROJECT_DIR$/_radar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="148" column="41" lean-forward="true" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/svg.js/svg.js.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="231" column="20" lean-forward="true" selection-start-line="231" selection-start-column="20" selection-end-line="231" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils_test.js" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="1076" column="22" lean-forward="false" selection-start-line="1076" selection-start-column="8" selection-end-line="1076" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.js" />
+    <entry file="file://$PROJECT_DIR$/gotest" />
+    <entry file="file://$PROJECT_DIR$/test.go" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/2017-05-26_152520.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_153202.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_153218.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_153310.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_154232.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_154309.json" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="1168" column="28" lean-forward="true" selection-start-line="1168" selection-start-column="28" selection-end-line="1168" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragDrop.js" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/http/http.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_162507.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_160524.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_160521.json" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/json/json.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="114" column="41" lean-forward="true" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_165557.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_180947.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_180851.json" />
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-26_180943.json" />
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="27" lean-forward="false" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/svg.draggable.js/dist/svg.draggable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195044.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195051.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195058.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195100.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195113.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195116.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195121.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/radarData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="59" column="12" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="65" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195359.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="231" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/releases/2017-05-27_195747.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="214" column="38" lean-forward="true" selection-start-line="214" selection-start-column="38" selection-end-line="214" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radars/twofour/current.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="149" column="32" lean-forward="true" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+          <folding>
+            <marker date="1495909412000" expanded="true" signature="5370:5392" ph="{&quot;r&quot;: 185.07550068109...}" />
+            <marker date="1495909412000" expanded="true" signature="5370:5523" ph="{&quot;name&quot;: &quot;TypeScript&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="5370:6313" ph="{...}" />
+            <marker date="1495909412000" expanded="true" signature="5370:6347" ph="{&quot;name&quot;: &quot;Languages &amp; Frameworks&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="5546:5913" ph="{&quot;name&quot;: &quot;Mustache\/Handlebars&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="5626:5740" ph="{&quot;r&quot;: 152.79068281265...}" />
+            <marker date="1495909412000" expanded="true" signature="5936:6299" ph="{&quot;name&quot;: &quot;ECMAScript&quot;...}" />
+            <marker date="1495909412000" expanded="true" signature="6006:6096" ph="{&quot;r&quot;: 390...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="60" lean-forward="false" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="39" column="90" lean-forward="false" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
+          <folding>
+            <element signature="e#2901#3575#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
