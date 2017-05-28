@@ -22,8 +22,14 @@ function Radar() {
         this.draw = SVG(element).size(this.size, this.size);
         this.size -= this.padding;
 
-        this.url = element.getAttribute('data-src');
+        this.url = 'api.php/' + element.getAttribute('data-src');
         this.data = this.getJSON();
+
+        if (this.data == false) {
+            this.url = 'radars/' + element.getAttribute('data-src') + '/current.json';
+            this.data = this.getJSON();
+        }
+
 
         document.title = this.data.name;
 
