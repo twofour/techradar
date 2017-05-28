@@ -22,7 +22,7 @@ class Api
 			die('Required a source');
 		}
 
-		$this->source = realpath(self::DIR . DIRECTORY_SEPARATOR . array_shift($this->request));
+		$this->source = (self::DIR . DIRECTORY_SEPARATOR . array_shift($this->request));
 		$this->releaseDir = $this->source . "/releases";
 		if (!file_exists($this->releaseDir)) {
 			mkdir($this->releaseDir, 0777, true);
@@ -188,8 +188,10 @@ class Api
 
 	function publish($releasePath)
 	{
+		$relativeReleasePath = ltrim(str_replace($this->source, '', $releasePath), DIRECTORY_SEPARATOR);
+
 		@unlink($this->current);
-		symlink($releasePath, $this->current);
+		symlink($relativeReleasePath, $this->current);
 	}
 	function clearReleases()
 	{
