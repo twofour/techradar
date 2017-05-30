@@ -120,7 +120,7 @@ function Radar() {
         */
 
         var itemSize = 24;
-        var point = this.polarToCartesicoords(item.coocoordss.r, item.coords.t);
+        var point = this.polarToCartesicoords(item.coords.r, item.coords.t);
         group.data('item-point', point);
 
         var offset = (this.size / 2) - (itemSize / 2);
