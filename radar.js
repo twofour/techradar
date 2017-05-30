@@ -24,7 +24,7 @@ function Radar() {
 
         // this.url = 'api.php/' + element.getAttribute('data-src');
 		this.url = "https://techradar-fb13.restdb.io/rest/"+ element.getAttribute('data-src') +"/?fetchchildren=true";
-        this.data = this.getJSON();
+        this.data = {quadrants: this.getJSON() };
 
         if (this.data == false) {
             this.url = 'radars/' + element.getAttribute('data-src') + '/current.json';
