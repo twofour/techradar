@@ -213,7 +213,7 @@ function Radar() {
 
         var request = new XMLHttpRequest();
 		request.open('GET', this.url, false);  // `false` makes the request synchronous
-		request.setRequestHeader("x-apikey", 'f6a3a5d47a0aa03117e25a2a9ca0c2b8b1207');
+		request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
         request.send(null);
 
         if (request.status === 200) {
@@ -226,7 +226,7 @@ function Radar() {
     this.sendJSON = function () {
         var request = new XMLHttpRequest();
         request.open('POST', this.url, false);  // `false` makes the request synchronous
-        request.setRequestHeader("x-apikey", 'f6a3a5d47a0aa03117e25a2a9ca0c2b8b1207');
+        request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
         request.send(JSON.stringify(this.data));
 
         if (request.status === 200) {
