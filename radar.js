@@ -77,7 +77,7 @@ function Radar() {
                 var index = Number(event.target.getAttribute('data-index')) - 1,
                     quadrant = this.data.quadrants[index];
 
-                var newItem = { name: name, pc: { r: 0, t: 0 }, movement: "c", color: quadrant.color};
+                var newItem = { name: name, coordsords: { r: 0, t: 0 }, movement: "c", color: quadrant.color};
                 quadrant.items.push(newItem);
                 newItem.index = quadrant.index + '.' + (quadrant.items.length);
 
@@ -89,7 +89,7 @@ function Radar() {
         }
     };
 
-    // { name: "Pair Programming", pc: { r: 130, t: 170 }, movement: "c"}
+    // { name: "Pair Programmincoords, coords: { r: 130, t: 170 }, movement: "c"}
     this.drawItem = function (item) {
 
         var group = this.draw.group().draggable();
@@ -120,7 +120,7 @@ function Radar() {
         */
 
         var itemSize = 24;
-        var point = this.polarToCartesian(item.pc.r, item.pc.t);
+        var point = this.polarToCartesicoords(item.coocoordss.r, item.coords.t);
         group.data('item-point', point);
 
         var offset = (this.size / 2) - (itemSize / 2);
@@ -146,12 +146,12 @@ function Radar() {
                 var point = group.data('item-point');
                 point.x = Number(point.x) + Number(matrix[4]);
                 point.y = Number(point.y) + Number(matrix[5]);
-                var pc = this.cartesianToPolar(point.x, point.y);
+    			var coords = this.cartesianToPolar(point.x, point.y);
 
                 var itemIndex = group.data('item-index').toString().split('.');
                 var item = this.data.quadrants[itemIndex[0] - 1].items[itemIndex[1] - 1];
 
-                item.pc = pc;
+				item.coords = coords;
 
                 this.sendJSON();
             }

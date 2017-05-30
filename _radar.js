@@ -40,10 +40,10 @@ radar.add(pv.Line)
 //     .def("active", false)
 //     .data(radar_data[i].items)
 //     .size( function(d) { return ( d.blipSize !== undefined ? d.blipSize : 70 ); })
-//     .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
+//     .left(function(d) { var x = polar_to_raster(d.coords.r, d.coords.t)[0];
 //                         //console.log("name:" + d.name + ", x:" + x); 
 //                         return x;})
-//     .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
+//     .bottom(function(d) { var y = polar_to_raster(d.coords.r, d.coords.t)[1];                                 
 //                           //console.log("name:" + d.name + ", y:" + y); 
 //                           return y;})
 //     .title(function(d) { return d.name;})		 
@@ -91,7 +91,7 @@ for (var i = 0; i < radar_data.length; i++) {
     // group items by stage based on how far they are from each arc
     var itemsByStage = _.groupBy(radar_data[i].items, function(item) {
       for(var arc_i = 0; arc_i < radar_arcs.length; arc_i++) {
-        if (item.pc.r < radar_arcs[arc_i].r)
+        if (item.coords.r < radar_arcs[arc_i].r)
         {
           return arc_i;
         }
@@ -144,10 +144,10 @@ for (var i = 0; i < radar_data.length; i++) {
           .def("active", false)
           .data(itemsByStage[stageIdx])
           .size( function(d) { return ( d.blipSize !== undefined ? d.blipSize : 70 ); })
-          .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
+          .left(function(d) { var x = polar_to_raster(d.coords.r, d.coords.t)[0];
                               //console.log("name:" + d.name + ", x:" + x);
                               return x;})
-          .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];
+          .bottom(function(d) { var y = polar_to_raster(d.coords.r, d.coords.t)[1];
                                 //console.log("name:" + d.name + ", y:" + y);
                                 return y;})
           .title(function(d) { return d.name;})
