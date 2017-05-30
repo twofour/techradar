@@ -22,7 +22,8 @@ function Radar() {
         this.draw = SVG(element).size(this.size, this.size);
         this.size -= this.padding;
 
-        this.url = 'api.php/' + element.getAttribute('data-src');
+        // this.url = 'api.php/' + element.getAttribute('data-src');
+		this.url = "https://techradar-fb13.restdb.io/rest/quadrants?fetchchildren=true";
         this.data = this.getJSON();
 
         if (this.data == false) {
