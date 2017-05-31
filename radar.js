@@ -14,7 +14,8 @@ function Radar() {
     this.draw = undefined;
     this.element = undefined;
 
-    this.data = [];
+    this.db = undefined;
+    this.radar = undefined;
 
     this.init = function (element) {
 
@@ -22,20 +23,32 @@ function Radar() {
         this.draw = SVG(element).size(this.size, this.size);
         this.size -= this.padding;
 
+        this.loadData();
+
         // this.url = 'api.php/' + element.getAttribute('data-src');
-		this.url = "https://techradar-fb13.restdb.io/rest/"+ element.getAttribute('data-src') +"/?fetchchildren=true";
-        this.data = {quadrants: this.getJSON() };
+        // this.url = "https://techradar-fb13.restdb.io/rest/"+ element.getAttribute('data-src') +"/?fetchchildren=true";
+        // this.data = {quadrants: this.getJSON() };
+        //
+        // if (this.data == false) {
+        //     this.url = 'radars/' + element.getAttribute('data-src') + '/current.json';
+        //     this.data = this.getJSON();
+        // }
 
-        if (this.data == false) {
-            this.url = 'radars/' + element.getAttribute('data-src') + '/current.json';
-            this.data = this.getJSON();
-        }
-
-
-        document.title = this.data.name;
+        document.title = this.radar.name;
 
         this.drawBackground();
         this.drawActions();
+    };
+
+    this.loadData = function() {
+        $.ajaxSetup().async = false;
+
+        this.db = new restdb("592d79a430b19d4b2a111b3f", {});
+        this.db.radars.find({name: "twofour"}, {}, function (err, radars) {
+            if (!err) {
+                this.radar = radars[0];
+            }
+        }.bind(this));
     };
 
     this.drawBackground = function () {
@@ -53,14 +66,20 @@ function Radar() {
     };
 
     this.drawActions = function () {
-        var quadrants = this.data.quadrants;
+        var quadrants = [];
+        this.radar.quadrants.getChild(function (err, res) {
+            if (!err) {
+                quadrants = res;
+            }
+        }.bind(this));
+
         for (var i in quadrants) {
 
             var quadrant = quadrants[i];
 
             var button = document.createElement("BUTTON");
             button.appendChild(document.createTextNode("+ " + quadrant.name));
-            button.setAttribute('data-index', quadrant.index);
+            button.setAttribute('data-index', i);
             button.style.background = quadrant.color;
             button.style.position = 'absolute';
             button.style.left = quadrant.left;
@@ -74,12 +93,14 @@ function Radar() {
                     return;
                 }
 
-                var index = Number(event.target.getAttribute('data-index')) - 1,
-                    quadrant = this.data.quadrants[index];
+                var index = Number(event.target.getAttribute('data-index'));
 
-                var newItem = { name: name, coords: { r: 0, t: 0 }, movement: "c";
-                quadrant.items.push(newItem);
-                newItem.index = quadrant.index + '.' + (quadrant.items.length);
+                var newItem = new this.db.items({ name: name, coords: { r: 0, t: 0 }, movement: "c", color: quadrant.color});
+                quadrant.items.addChild(newItem, function(err, res){
+                    if (!err){
+                        // res is the saved child
+                    }
+                });
 
                 this.drawItem(newItem);
 
@@ -131,7 +152,7 @@ function Radar() {
         group.text(item.name).move(x + 3, y + (itemSize / 4)).font({ size: 12 });
         group.node.style.cursor = "pointer";
 
-        group.data('item-index', item.index);
+        group.data('item-id', item._id);
 
         group.off('dragend').on('dragend', function(event){
 
@@ -148,12 +169,20 @@ function Radar() {
                 point.y = Number(point.y) + Number(matrix[5]);
     			var coords = this.cartesianToPolar(point.x, point.y);
 
-                var itemIndex = group.data('item-index').toString().split('.');
-                var item = this.data.quadrants[itemIndex[0] - 1].items[itemIndex[1] - 1];
+                var item = undefined;
+                this.db.items.getById(group.data('item-id'), function(err, res){
+                    if (!err){
+                        item = res;
+                    }
+                });
 
 				item.coords = coords;
 
-                this.sendJSON();
+                item.save(function(err, res){
+                    if (!err){
+                        Object.assign(item, res);
+                    }
+                });
             }
         }, this);
 
@@ -161,11 +190,21 @@ function Radar() {
             event.preventDefault();
 
             if (confirm("Soll das Element \""+ event.currentTarget.textContent +"\" endgültig gelöscht werden?")) {
-                var itemIndex = event.currentTarget.getAttribute('data-item-index').split('.');
-                this.data.quadrants[itemIndex[0] - 1].items.splice(itemIndex[1] - 1, 1);
                 event.currentTarget.remove();
 
-                this.sendJSON();
+                var item = undefined;
+                this.db.items.getById(event.currentTarget.getAttribute('data-item-id'), function(err, res){
+                    if (!err){
+                        item = res;
+                    }
+                });
+
+                item.delete(function(err, res){
+                    if (!err){
+                        // res is the ID of the deleted object
+                        console.log('The item "'+ res.result.join() +'" is deleted!');
+                    }
+                });
             }
 
             return false;
@@ -173,16 +212,30 @@ function Radar() {
     };
 
     this.render = function () {
-        var quadrants = this.data.quadrants;
+        var quadrants = [];
+        this.radar.quadrants.getChild(function (err, res) {
+            if (!err) {
+                quadrants = res;
+            }
+        }.bind(this));
+
         for (var i in quadrants) {
 
             var quadrant = quadrants[i];
             quadrant.index = Number(i) + 1;
 
-            // Todo: Legende zeichnen
+            /*
+             * Todo: Legende zeichnen
+             */
 
-            quadrant.items = Object.values(quadrant.items);
-            quadrant.items.forEach(function (item, index) {
+            var items = [];
+            quadrant.items.getChild(function (err, res) {
+                if (!err) {
+                    items = res;
+                }
+            }.bind(this));
+
+            items.forEach(function (item, index) {
                 if (item) {
                     item.index = quadrant.index + '.' + (index + 1);
                     item.color = quadrant.color;
@@ -209,30 +262,30 @@ function Radar() {
         };
     };
 
-    this.getJSON = function() {
-
-        var request = new XMLHttpRequest();
-		request.open('GET', this.url, false);  // `false` makes the request synchronous
-		request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
-        request.send(null);
-
-        if (request.status === 200) {
-            return JSON.parse(request.responseText);
-        }
-
-        return false;
-    };
-
-    this.sendJSON = function () {
-        var request = new XMLHttpRequest();
-        request.open('POST', this.url, false);  // `false` makes the request synchronous
-        request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
-        request.send(JSON.stringify(this.data));
-
-        if (request.status === 200) {
-            return JSON.parse(request.responseText);
-        }
-
-        return false;
-    }
+    // this.getJSON = function() {
+    //
+    //     var request = new XMLHttpRequest();
+		// request.open('GET', this.url, false);  // `false` makes the request synchronous
+		// request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
+    //     request.send(null);
+    //
+    //     if (request.status === 200) {
+    //         return JSON.parse(request.responseText);
+    //     }
+    //
+    //     return false;
+    // };
+    //
+    // this.sendJSON = function () {
+    //     var request = new XMLHttpRequest();
+    //     request.open('POST', this.url, false);  // `false` makes the request synchronous
+    //     request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
+    //     request.send(JSON.stringify(this.data));
+    //
+    //     if (request.status === 200) {
+    //         return JSON.parse(request.responseText);
+    //     }
+    //
+    //     return false;
+    // }
 }
