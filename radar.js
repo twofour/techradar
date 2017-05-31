@@ -37,7 +37,6 @@ function Radar() {
         document.title = this.radar.name;
 
         this.drawBackground();
-        this.drawActions();
     };
 
     this.loadData = function() {
@@ -65,49 +64,70 @@ function Radar() {
         this.draw.line(halfSize, 0, halfSize, this.size).stroke({width: 1})
     };
 
-    this.drawActions = function () {
-        var quadrants = [];
-        this.radar.quadrants.getChild(function (err, res) {
-            if (!err) {
-                quadrants = res;
+    this.createButton = function (quadrant, i) {
+        var button = document.createElement("BUTTON");
+
+        button.appendChild(document.createTextNode("+ " + quadrant.name));
+        button.setAttribute('data-index', i);
+        button.setAttribute('data-id', quadrant._id);
+        button.style.background = quadrant.color;
+        button.style.position = 'absolute';
+        button.style.left = quadrant.left;
+        button.style.right = quadrant.right;
+        button.style.top = quadrant.top;
+        button.style.bottom = quadrant.bottom;
+
+        button.onclick = function (event) {
+            var name = prompt('Bitte Namen eingeben');
+            if (!name) {
+                return;
             }
-        }.bind(this));
+            var url = prompt('Bitte gib eine URL eingeben (optional)');
 
-        for (var i in quadrants) {
-
-            var quadrant = quadrants[i];
-
-            var button = document.createElement("BUTTON");
-            button.appendChild(document.createTextNode("+ " + quadrant.name));
-            button.setAttribute('data-index', i);
-            button.style.background = quadrant.color;
-            button.style.position = 'absolute';
-            button.style.left = quadrant.left;
-            button.style.right = quadrant.right;
-            button.style.top = quadrant.top;
-            button.style.bottom = quadrant.bottom;
-
-            button.onclick = function (event) {
-                var name = prompt('Bitte Namen eingeben');
-                if (!name) {
-                    return;
+            var newItem = new this.db.items({
+                name: name,
+                url: url,
+                coords: {r: 0, t: 0},
+                movement: "c",
+                color: event.target.style.background
+            });
+            quadrant.items.addChild(newItem, function (err, res) {
+                if (!err) {
+                    // res is the saved child
                 }
+            });
 
-                var index = Number(event.target.getAttribute('data-index'));
+            this.drawItem(newItem);
 
-                var newItem = new this.db.items({ name: name, coords: { r: 0, t: 0 }, movement: "c", color: quadrant.color});
-                quadrant.items.addChild(newItem, function(err, res){
-                    if (!err){
-                        // res is the saved child
-                    }
-                });
+        }.bind(this);
 
-                this.drawItem(newItem);
+        return button;
+    };
 
-            }.bind(this);
+    this.createLegends = function (quadrant, items) {
 
-            this.element.append(button);
-        }
+        var legend = document.createElement("DIV");
+
+        var button = this.createButton(quadrant, quadrant.index - 1);
+        legend.append(button);
+
+        var list = document.createElement("OL");
+        legend.append(list);
+
+        items.forEach(function(item) {
+            var link = document.createElement('A');
+            link.appendChild(document.createTextNode(item.name));
+            link.title = item.name;
+            link.href = item.url;
+            link.target = '_blank';
+
+            var li = document.createElement("LI");
+            li.appendChild(link);
+
+            list.appendChild(li);
+        });
+
+        this.element.append(legend);
     };
 
     // { name: "Pair Programmincoords, coords: { r: 130, t: 170 }, movement: "c"}
@@ -154,9 +174,13 @@ function Radar() {
 
         group.data('item-id', item._id);
 
+        // group.linkTo(function(link) {
+        //     link.to('http://svgdotjs.github.io/').target('_blank')
+        // });
+
         group.off('dragend').on('dragend', function(event){
 
-            // event.detail.event hold the given data explained below
+            event.preventDefault();
 
             var matrix = event.target.getAttribute('transform');
             if (matrix) {
@@ -184,6 +208,8 @@ function Radar() {
                     }
                 });
             }
+
+            return false;
         }, this);
 
         group.off('contextmenu').on('contextmenu', function(event) {
@@ -242,6 +268,8 @@ function Radar() {
                     this.drawItem(item);
                 }
             }, this);
+
+            this.createLegends(quadrant, items)
 
         }
     };
