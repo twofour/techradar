@@ -77,7 +77,7 @@ function Radar() {
                 var index = Number(event.target.getAttribute('data-index')) - 1,
                     quadrant = this.data.quadrants[index];
 
-                var newItem = { name: name, coordsords: { r: 0, t: 0 }, movement: "c", color: quadrant.color};
+                var newItem = { name: name, coords: { r: 0, t: 0 }, movement: "c";
                 quadrant.items.push(newItem);
                 newItem.index = quadrant.index + '.' + (quadrant.items.length);
 
