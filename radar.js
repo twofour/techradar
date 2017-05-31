@@ -25,14 +25,12 @@ function Radar() {
 
         this.loadData();
 
-        // this.url = 'api.php/' + element.getAttribute('data-src');
-        // this.url = "https://techradar-fb13.restdb.io/rest/"+ element.getAttribute('data-src') +"/?fetchchildren=true";
-        // this.data = {quadrants: this.getJSON() };
-        //
-        // if (this.data == false) {
-        //     this.url = 'radars/' + element.getAttribute('data-src') + '/current.json';
-        //     this.data = this.getJSON();
-        // }
+        var link = document.createElement('A');
+        link.appendChild(document.createTextNode('Admin'));
+        link.title = this.db.url;
+        link.href = this.db.url;
+        link.target = 'blank';
+        this.element.parentNode.appendChild(link);
 
         document.title = this.radar.name;
 
@@ -56,12 +54,47 @@ function Radar() {
         for (var i = 1; i < 5; i++) {
             var size = i * (space) - this.padding;
             this.draw.circle(size).move((this.size / 2) - (size / 2), (this.size / 2) - (size / 2)).fill('transparent').stroke('#585858');
-            this.draw.text("Zone " + i).move((this.size / 2), (this.size / 2) + (size / 2)).font({ size: 12 });
+            this.draw
+                .text("Zone " + i)
+                .move((this.size / 2) - 14, (this.size / 2) + (size / 2) - 40)
+                .rotate(-90)
+                .font({ size: 12 });
         }
 
         var halfSize = (this.size / 2);
         this.draw.line(0, halfSize, this.size, halfSize).stroke({width: 1})
         this.draw.line(halfSize, 0, halfSize, this.size).stroke({width: 1})
+    };
+
+    this.createLegends = function (quadrant, items) {
+
+        var legend = document.createElement("DIV");
+        legend.style.position = 'absolute';
+        legend.style.left = quadrant.left;
+        legend.style.right = quadrant.right;
+        legend.style.top = quadrant.top;
+        legend.style.bottom = quadrant.bottom;
+
+        var button = this.createButton(quadrant, quadrant.index - 1);
+        legend.append(button);
+
+        var list = document.createElement("OL");
+        legend.append(list);
+
+        items.forEach(function(item) {
+            var link = document.createElement('A');
+            link.appendChild(document.createTextNode(item.name));
+            link.title = item.name;
+            link.href = item.url;
+            link.target = 'blank';
+
+            var li = document.createElement("LI");
+            li.appendChild(link);
+
+            list.appendChild(li);
+        });
+
+        this.element.append(legend);
     };
 
     this.createButton = function (quadrant, i) {
@@ -71,11 +104,6 @@ function Radar() {
         button.setAttribute('data-index', i);
         button.setAttribute('data-id', quadrant._id);
         button.style.background = quadrant.color;
-        button.style.position = 'absolute';
-        button.style.left = quadrant.left;
-        button.style.right = quadrant.right;
-        button.style.top = quadrant.top;
-        button.style.bottom = quadrant.bottom;
 
         button.onclick = function (event) {
             var name = prompt('Bitte Namen eingeben');
@@ -102,32 +130,6 @@ function Radar() {
         }.bind(this);
 
         return button;
-    };
-
-    this.createLegends = function (quadrant, items) {
-
-        var legend = document.createElement("DIV");
-
-        var button = this.createButton(quadrant, quadrant.index - 1);
-        legend.append(button);
-
-        var list = document.createElement("OL");
-        legend.append(list);
-
-        items.forEach(function(item) {
-            var link = document.createElement('A');
-            link.appendChild(document.createTextNode(item.name));
-            link.title = item.name;
-            link.href = item.url;
-            link.target = '_blank';
-
-            var li = document.createElement("LI");
-            li.appendChild(link);
-
-            list.appendChild(li);
-        });
-
-        this.element.append(legend);
     };
 
     // { name: "Pair Programmincoords, coords: { r: 130, t: 170 }, movement: "c"}
@@ -168,15 +170,14 @@ function Radar() {
         var x = point.x + offset,
             y = point.y + offset;
 
-        group.circle(itemSize, itemSize).move(x, y).attr({fill: item.color});
-        group.text(item.name).move(x + 3, y + (itemSize / 4)).font({ size: 12 });
+        var title = document.createElement('TITLE');
+        title.textContent = " " + item.index + " ";
+        group.node.appendChild(title);
+        group.circle(itemSize, itemSize).center(x, y).attr({fill: item.color});
+        group.text(item.index).center(x, y + 4).font({ size: 12 });
         group.node.style.cursor = "pointer";
 
         group.data('item-id', item._id);
-
-        // group.linkTo(function(link) {
-        //     link.to('http://svgdotjs.github.io/').target('_blank')
-        // });
 
         group.off('dragend').on('dragend', function(event){
 
@@ -263,7 +264,7 @@ function Radar() {
 
             items.forEach(function (item, index) {
                 if (item) {
-                    item.index = quadrant.index + '.' + (index + 1);
+                    item.index = String(index + 1);
                     item.color = quadrant.color;
                     this.drawItem(item);
                 }
