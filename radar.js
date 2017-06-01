@@ -41,7 +41,7 @@ function Radar() {
         $.ajaxSetup().async = false;
 
         this.db = new restdb("592d79a430b19d4b2a111b3f", {});
-        this.db.radars.find({name: "twofour"}, {}, function (err, radars) {
+        this.db.radars.find({name: this.element.getAttribute('data-src')}, {}, function (err, radars) {
             if (!err) {
                 this.radar = radars[0];
             }
