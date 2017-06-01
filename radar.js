@@ -32,7 +32,7 @@ function Radar() {
         link.target = 'blank';
         this.element.parentNode.appendChild(link);
 
-        document.title = this.radar.name;
+        document.title = this.radar.title;
 
         this.drawBackground();
     };
@@ -58,7 +58,7 @@ function Radar() {
             this.draw
                 .text("Zone " + i)
                 .addClass('bg-label')
-                .center((this.size / 2), (this.size / 2) + (size / 2) - 20)
+                .center((this.size / 2) - 8, (this.size / 2) + (size / 2) - 25)
                 .rotate(-90);
         }
 
@@ -69,18 +69,23 @@ function Radar() {
 
     this.createLegends = function (quadrant, items) {
 
-        var legend = document.createElement("DIV");
-        legend.style.position = 'absolute';
-        legend.style.left = quadrant.left;
-        legend.style.right = quadrant.right;
-        legend.style.top = quadrant.top;
-        legend.style.bottom = quadrant.bottom;
+        var legend = document.getElementById(quadrant._id);
+        if (!legend) {
+            legend = document.createElement("DIV");
+            legend.id = quadrant._id;
+            legend.classList.add('legend');
+            legend.style.position = 'absolute';
+            legend.style.left = quadrant.left;
+            legend.style.right = quadrant.right;
+            legend.style.top = quadrant.top;
+            legend.style.bottom = quadrant.bottom;
 
-        var button = this.createButton(quadrant, quadrant.index - 1);
-        legend.append(button);
+            legend.append(this.createButton(quadrant, quadrant.index - 1));
+            legend.append(document.createElement("OL"));
+        }
 
-        var list = document.createElement("OL");
-        legend.append(list);
+        var list = legend.getElementsByTagName('OL')[0];
+        list.innerHTML = '';
 
         items.forEach(function(item) {
             var link = document.createElement('A');
