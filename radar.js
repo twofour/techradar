@@ -137,7 +137,7 @@ function Radar() {
         return button;
     };
 
-    // { name: "Pair Programming", coords: { r: 130, t: 170 }, movement: "c"}
+    // { name: "Pair Programming", coords: { r: 130, t: 170 }, movement: "c", url: "https://google.de/"}
     this.drawItem = function (item) {
 
         var group = this.draw.group().draggable().addClass('item');
@@ -153,10 +153,18 @@ function Radar() {
         var title = document.createElement('TITLE');
         title.textContent = " " + item.index + " ";
         group.node.appendChild(title);
-        group.circle(itemSize, itemSize).center(x, y).attr({fill: item.color});
-        group.text(item.index).center(x, y);
         group.node.style.cursor = "pointer";
-
+	
+		
+		if (item.url) {
+			group.image("http://www.google.com/s2/favicons?domain=" + item.url, 20, 20).center(x, y);
+	        group.text(item.index).center(x, y + 20);
+		}
+		else {
+	        group.circle(itemSize, itemSize).center(x, y).attr({fill: item.color});
+	        group.text(item.index).center(x, y);
+		}
+		
         group.data('item-name', item.name);
         group.data('item-id', item._id);
 
