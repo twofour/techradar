@@ -88,13 +88,23 @@ function Radar() {
         list.innerHTML = '';
 
         items.forEach(function(item) {
+            var li = document.createElement("LI");
+
+            if (item.icon || item.url) {
+                var image = document.createElement("IMG");
+                image.src = item.icon || ("http://www.google.com/s2/favicons?domain=" + item.url);
+                image.width = 18;
+                image.height = 18;
+                li.appendChild(image);
+            }
+
             var link = document.createElement('A');
             link.appendChild(document.createTextNode(item.name));
             link.title = item.name;
-            link.href = item.url;
+            if (item.url) {
+                link.href = item.url;
+            }
             link.target = 'blank';
-
-            var li = document.createElement("LI");
             li.appendChild(link);
 
             list.appendChild(li);
@@ -156,13 +166,14 @@ function Radar() {
         group.node.style.cursor = "pointer";
 	
 		
-		if (item.url) {
-			group.image("http://www.google.com/s2/favicons?domain=" + item.url, 20, 20).center(x, y);
-	        group.text(item.index).center(x, y + 20);
+		if (item.icon || item.url) {
+            var iconUrl = item.icon || ("http://www.google.com/s2/favicons?domain=" + item.url);
+			group.image(iconUrl, 18, 18).center(x, y);
+	        group.text(item.index).center(x, y + 15).addClass('item-label');
 		}
 		else {
 	        group.circle(itemSize, itemSize).center(x, y).attr({fill: item.color});
-	        group.text(item.index).center(x, y);
+	        group.text(item.index).center(x, y).addClass('item-label');
 		}
 		
         group.data('item-name', item.name);
