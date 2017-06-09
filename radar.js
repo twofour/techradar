@@ -6,16 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 }, false);
 
-
-function Radar() {
+window.Radar = function (options = {}) {
 
     this.size = 800; //window.innerWidth / 2;
     this.padding = 50;
     this.draw = undefined;
     this.element = undefined;
+	this.editmode = false,
 
     this.db = undefined;
     this.radar = undefined;
+	
+	Object.assign(this, options);
 
     this.init = function (element) {
 
@@ -25,16 +27,22 @@ function Radar() {
 
         this.loadData();
 
-        var link = document.createElement('A');
-        link.appendChild(document.createTextNode('Admin'));
-        link.title = this.db.url;
-        link.href = this.db.url;
-        link.target = 'blank';
-        this.element.parentNode.appendChild(link);
+        var link = document.getElementById('admin');
+		if (link) {
+        	link.title = this.db.url;
+        	link.href = this.db.url;
+        	link.target = 'blank';
+		}
+		
+        var checkbox = document.getElementById('editmode');
+		if (checkbox) {
+			checkbox.onchange = function(event) {
+				this.editmode = event.target.checked;
+				this.render();
+			}.bind(this);
+		}
 
         document.title = this.radar.title;
-
-        this.drawBackground();
     };
 
     this.loadData = function() {
@@ -122,6 +130,10 @@ function Radar() {
         button.style.background = quadrant.color;
 
         button.onclick = function (event) {
+			if (!this.editmode) {
+				return;
+			}
+			
             var name = prompt('Bitte Namen eingeben');
             if (!name) {
                 return;
@@ -150,7 +162,7 @@ function Radar() {
     // { name: "Pair Programming", coords: { r: 130, t: 170 }, movement: "c", url: "https://google.de/"}
     this.drawItem = function (item) {
 
-        var group = this.draw.group().draggable().addClass('item');
+        var group = this.draw.group().draggable(this.editmode).addClass('item');
 
         var itemSize = 24;
         var point = this.polarToCartesian(item.coords.r, item.coords.t);
@@ -163,8 +175,10 @@ function Radar() {
         var title = document.createElement('TITLE');
         title.textContent = " " + item.index + " ";
         group.node.appendChild(title);
-        group.node.style.cursor = "pointer";
-	
+		
+		if (this.editmode) {
+	        group.node.style.cursor = "pointer";		
+		}
 		
 		if (item.icon || item.url) {
             var iconUrl = item.icon || ("http://www.google.com/s2/favicons?domain=" + item.url);
@@ -223,6 +237,10 @@ function Radar() {
     };
 
     this.deleteItem = function(element) {
+		if (!this.editmode) {
+			return;
+		}
+		
         var name = element.getAttribute('data-item-name');
         if (confirm("Soll das Element \"" + name + "\" endgültig gelöscht werden?")) {
             element.remove();
@@ -245,6 +263,11 @@ function Radar() {
     };
 
     this.render = function () {
+		
+		this.draw.clear();
+		
+        this.drawBackground();
+		
         var quadrants = [];
         this.radar.quadrants.getChild(function (err, res) {
             if (!err) {
@@ -296,31 +319,4 @@ function Radar() {
             t: Math.atan2(x, y) * -(180 / Math.PI) + 90
         };
     };
-
-    // this.getJSON = function() {
-    //
-    //     var request = new XMLHttpRequest();
-		// request.open('GET', this.url, false);  // `false` makes the request synchronous
-		// request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
-    //     request.send(null);
-    //
-    //     if (request.status === 200) {
-    //         return JSON.parse(request.responseText);
-    //     }
-    //
-    //     return false;
-    // };
-    //
-    // this.sendJSON = function () {
-    //     var request = new XMLHttpRequest();
-    //     request.open('POST', this.url, false);  // `false` makes the request synchronous
-    //     request.setRequestHeader("x-apikey", '592d79a430b19d4b2a111b3f');
-    //     request.send(JSON.stringify(this.data));
-    //
-    //     if (request.status === 200) {
-    //         return JSON.parse(request.responseText);
-    //     }
-    //
-    //     return false;
-    // }
 }
