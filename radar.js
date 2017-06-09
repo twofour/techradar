@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function Radar() {
 
-    this.size = window.innerWidth / 2;
+    this.size = 800; //window.innerWidth / 2;
     this.padding = 50;
     this.draw = undefined;
     this.element = undefined;
